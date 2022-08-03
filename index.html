@@ -114,6 +114,9 @@
         <ul>
             <li>session 인증</li>
             <li>Template과 DRF의 적절한 활용</li>
+            <li>view로 구혔했던 partial rendering을 Javscript에서 컨트롤하도록 리팩토링</li>
+            <li>Ajax + DRF를 활용하여 offset limit 더보기 페지네이션 구현</li>
+            <li>NGINX + Gunicorn 배포 환경 구축</li>
         </ul>
         </br>
         </br>
@@ -156,23 +159,8 @@
 
     <div class="col-xs-12 col-print-12">
       <ul>
-        <li><mark>What?</mark> 깊게 연결 되어있는 관계형 데이터 테이블들( nested serializer ) 을 django ORM으로 최적화</li>
-        <li><mark>How ?</mark> select_related 및 prefetch_related를 적극 활용하여 ORM 최적화를 진행했습니다.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row clearfix layout layout-top-middle">
-    <div class="col-xs-12 col-print-12 details">
-      <h4>Raw 쿼리 데이터 가공</h4>
-    </div>
-
-    </br>
-
-    <div class="col-xs-12 col-print-12">
-      <ul>
-        <li><mark>What ?</mark> ORM을 사용하지 않고 raw 쿼리를 사용하여 데이터를 가공</li>
-        <li><mark>How ?</mark> pandas의 Dataframe group by 등을 활용하여, 최소한의 DB 접근으로 필요한 데이터를 제공하도록 했습니다.</li>
+        <li><mark>What?</mark> 깊게 연결 되어있는 관계형 데이터 테이블들( nested serializer or nested table ) 을 django ORM으로 최적화</li>
+        <li><mark>How ?</mark> Lazy Loading의 특성을 가지고 있는데 여기서 N+1 문제를 해결하기 위해</br>select_related 및 prefetch_related를 적극 활용하여 ORM 최적화를 진행했습니다. </li>
       </ul>
     </div>
   </div>
@@ -187,7 +175,7 @@
     <div class="col-xs-12 col-print-12">
       <ul>
         <li><mark>What?</mark> Ajax로 django API와 통신할 때, 페이지 전체를 렌더링 하는 것이 아니라 HTML 내 필요한 부분만 렌더링</li>
-        <li><mark>How ?</mark> 부분 렌더링이 필요한 HTML 파트를 별도의 파일로 분리 후, 분리한 파트만 업데이트 하는 API View 구현</li>
+        <li><mark>How ?</mark> 첫 홈페이지 접속 시에는 Django View GET방식으로 템플릿 렌더링</br>이 후 더보기 버튼 누를 때마다 별도의 Api 호출 후 응답 데이터를 jaascript에서 핸들링</li>
       </ul>
     </div>
   </div>
@@ -209,7 +197,6 @@
         <li>Python</li>
         <li>Django, Django Restframework</li>
         <li>MariaDB, Mysql</li>
-        <li>Visual Studio Code, Pycharm</li>
       </ul>
     </div>
   </div>
@@ -236,7 +223,18 @@
       </ul>
     </div>
   </div>    
-
+    
+  <div class="row clearfix layout layout-left">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4>Cooperation Tool</h4>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      <ul>
+        <li>Github</li>
+      </ul>
+    </div>
+  </div>  
+    
 </div>
 
 </br>
