@@ -56,15 +56,19 @@
   <div class="row clearfix"><div class="col-xs-12 col-sm-4 col-md-3 no-print">
         <span class="profile-img" style="background-image: url(./profile.jpg)"></span>
       </div><div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      <div>
+        <img width="100" height="100" src="https://user-images.githubusercontent.com/48057905/209806943-24c24720-9b62-429f-9f88-48ec065cc2d3.png"/>
+        <img width="100" height="100" src="https://user-images.githubusercontent.com/48057905/218455085-da285347-f6eb-40fa-b9f7-2506bc204a96.png"/>
+      </div>
+    </br>
       <p>
           반갑습니다. 저는 파이썬 기반의 백엔드 개발자로 REST API 개발을 해왔습니다.</br></br>
-          현재는 패션 서비스 <mark>데이터 베이스 구축</mark>및 <mark>REST API end point 설계</mark>,</br>
           <mark>django, DRF를 활용한 REST API 개발</mark>을 주로 하고 있습니다.</br>
       </p>
       </br>
       <p>
           현재는 업무 이후 평일과 주말을 활용해서 <mark>머신러닝에 필요한 기초 수학</mark>을 공부하고 있으며, </br>
-          온라인 강의를 통해 스터디를 진행하고 있습니다.
+          Fastapi 프레임워크에 대한 공부도 진행하고 있습니다.
       </p>
       </br>
     </div>
@@ -87,20 +91,15 @@
             <p class="quote">패션 서비스 사용자 앱, 매니저 앱 API 개발</p>
             <ul>
                 <li>확장성을 고려한 데이터 베이스를 구성</li></br>
-                <li>사용자이름 OR 이메일을 모두 지원하는 Customized Login 구현 &amp; 커스텀 JWT 토큰 인증 시스템 도입</li></br>
-                <li>django ORM 최적화</li></br>
-                <li>Divide &amp; Conquer를 활용하여 프로젝트 및 코드 구조화</li></br>
                 <li>AWS EC2 서버 세팅</li></br>
                 <li>NGINX &amp; WSGI로 API 배포 환경 구축</li></br>
                 <li>Selenum &amp; BS4 & subprocess & PyQt5 패키지를 활용하여 로컬 이미지 크롤러 개발</li></br>
-                <li>Swagger를 활용한 API 명세서 작성으로 FE와의 매끄러운 협업 진행</li></br>
             </ul>
             </br>
             </br>
             <p class="quote">패션 서비스 관리자 백 오피스 풀스택 개발</p>
             <ul>
                 <li>django 풀스택 백오피스 개발</li></br>
-                <li>사용자 경험을 고려하여 <b>template 부분 렌더링</b> 기술 적용</li></br>
             </ul>
         </div>
 
@@ -123,9 +122,7 @@
             <ul>
                 <li>session 인증</li></br>
                 <li>Template과 DRF의 적절한 활용</li></br>
-                <li>Ajax + DRF를 활용하여 offset limit 더보기 페지네이션 구현</li></br>
                 <li>NGINX + Gunicorn 배포 환경 구축</li></br>
-                <li>View로 구현했던 partial rendering을 Javascript에서 컨트롤하도록 리팩토링</li></br>
             </ul>
             </br>
             </br>
@@ -150,14 +147,14 @@
             <ul>
                 <li>celery를 활용하여 Background task 및 Scheduler 관리</li></br>
                 <li>포인트 기능 자체 구축</li></br>
-                <li>데이터베이스를 writable, readable로 나누어 동기화</li></br>
-                <li>ASG + ALB를 활용하여 트래픽 분산 및 EC2 인스턴스 + RDS scale out</li></br>
-                <li>S3 Presigned Url 방식의 이미지 업로딩</li></br>
+                <li>Aurora RDS Read replica를 활용하여 read latency 감소</li></br>
+                <li>ASG + ALB를 활용하여 트래픽 분산</li></br>
+                <li>S3 Presigned Url 방식의 이미지 업로드</li></br>
                 <li>Lambda를 활용하여 S3 이미지를 resizing하여 용량 최적화</li></br>
                 <li>Django Admin을 커스텀하여 마스터 및 입점사 관리</li></br>
-                <li>이커머스, 배송추적 등 외부 API 지원 서비스를 클라이언트(프론트)에서 직접 연동 하지않고,<br>
-                    가맹점 서버를 통해 reverse-proxy하여 접근하도록 지원
-                </li></br>
+                <li>AWS ECS 서비스를 활용하여 Dockerizing</li></br>
+                <li>Github actions로 CICD 환경에서 개발 경험 상승</li></br>
+                <li>IaC ( Cloudformation Template )으로 배포 구성 관리</li></br>
             </ul>
             </br>
             </br>
@@ -184,9 +181,10 @@
       </ul>
 
     </div>
+    </br>
 
     <div class="col-xs-12 col-print-12 details">
-      <h4>AWS 서비스 적극 도입</h4>
+      <h4>AWS 서비스와 통합 개발</h4>
     </div>
 
     <div class="col-xs-12 col-print-12">
@@ -203,34 +201,21 @@
   <h3>기술적으로 직면했던 문제들</h3>
 
   <div class="row clearfix layout layout-top-middle">
-    <div class="col-xs-12 col-print-12 details">
-      <h4>ORM 쿼리 최적화</h4>
-    </div>
-
-    </br>
-
-    <div class="col-xs-12 col-print-12">
-      <ul>
-        <li><mark>What?</mark> M2M 관계가 있는 테이블의 특정 데이터를 가공하여 Serializer에 제공해야하는 문제</li>
-        <li><mark>How ?</mark> Prefetch와 Subquery를 활용하여 ORM 쿼리를 작성</li>
-      </ul>
-    </div>
   </div>
 
   <div class="row clearfix layout layout-top-middle">
-    <div class="col-xs-12 col-print-12 details">
-      <h4>API 퍼포먼스 향상</h4>
-    </div>
 
-    </br>
-    
+    <div class="col-xs-12 col-print-12 details">
+      <h4>Latency 퍼포먼스 향상</h4>
+    </div>
     <div class="col-xs-12 col-print-12">
       <ul>
-        <li><mark>What?</mark> 특정 작업 이후, 연관되어있는 Model들에게도 변화를 주어야하는 문제</li>
-        <li><mark>How ?</mark> 메세지를 보내거나 푸시를 보낼 때는 백그라운드 비동기 처리. 그 외 Signal 활용</li>
+        <li><mark>What?</mark>커머스 포인트 차감, order & refund process, payment process 등</li>
+        클라이언트가 응답을 받기 까지 서버의 특정 작업을 기다려야 했던 문제</li>
+        <li><mark>How ?</mark> Celery + Redis ( Message Que ) 조합으로 Async Background task로 분리</li>
+        <li><mark>Result</mark> 환불 정책으로 인한 금액 비용 계산 feature 기준 45% 성능 향상</li>
       </ul>
     </div>
-
   </div>
 
 </div>
@@ -243,9 +228,9 @@
 
   <div class="row clearfix layout layout-top-middle">
     <div class="col-xs-12 col-print-12 details">
-      <a href="https://github.com/GisangLee/modelviewset_practice_backend" target="_blank" class="link">
+      <a href="https://github.com/GisangLee/full_reference_drf" target="_blank" class="link">
         <h4>Github</h4>
-        <h4>https://github.com/GisangLee/modelviewset_practice_backend</h4>
+        <h4>django 초기 세팅 init</h4>
       </a>
     </div>
 
@@ -267,7 +252,7 @@
       <ul>
         <li>Python</li>
         <li>Django, Django Restframework</li>
-        <li>MariaDB, Mysql</li>
+        <li>Postgresql, MariaDB, Mysql</li>
       </ul>
     </div>
   </div>
@@ -279,6 +264,8 @@
     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
       <ul>
         <li>AWS EC2, Nginx, Ubuntu</li>
+        <li>AWS Nat Gateway, ALB, ASG</li>
+        <li>AWS SES, AWS Lambda, AWS CloudWatch, AWS SNS, AWS ECR, AWS ECS, Github action</li>
       </ul>
     </div>
   </div>   
@@ -302,10 +289,41 @@
     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
       <ul>
         <li>Github</li>
+        <li>Notion</li>
       </ul>
     </div>
   </div>  
     
+</div>
+
+<div class="container education-container">
+  <h3>Certifications</h3>
+  <p class="quote">자격증 내역</p>
+
+  <div class="row clearfix layout layout-left">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4>AWS CLF</h4>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      <ul>
+        <img width="100" height="100" src="https://user-images.githubusercontent.com/48057905/209806943-24c24720-9b62-429f-9f88-48ec065cc2d3.png"/>
+        <li>취득일 > 2022.12.27</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row clearfix layout layout-left">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4>AWS DVA-C01</h4>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      <ul>
+        <img width="100" height="100" src="https://user-images.githubusercontent.com/48057905/218455085-da285347-f6eb-40fa-b9f7-2506bc204a96.png"/>
+        <li>취득일 > 2023.02.13</li>
+      </ul>
+    </div>
+  </div>   
+  
 </div>
 
 </br>
@@ -322,17 +340,7 @@
         <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
             <p class="quote">개인 기술 블로그</p>
             <ul>
-                <li>업무에서 만난 문제, 회사에서 사용해야할 기술 등을 자세히 정리하여 공유하기 위한 블로그</li>
-            </ul>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-            <h4>개인 NPM 패키지</h4>
-            <a href="https://www.npmjs.com/~gisanglee target="_blank" class="link">https://www.npmjs.com/~gisanglee</a>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-            <p class="quote">개인 Node 패키지 주소</p>
-            <ul>
-                <li>나만의 노드 패키지를 모아두기 위한 사이트</li>
+                <li>업무에서 만난 문제, 회사에서 사용해야할 기술, 개인 공부 등을 정리하기 위한 블로그</li>
             </ul>
         </div>
    </div>
