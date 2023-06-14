@@ -51,7 +51,7 @@
   </div>
 </div>
 <main class="page-content" aria-label="Content">
-        <div class="wrapper"><div class="container intro-container">
+  <div class="container intro-container">
   <h3>About Me</h3>
   <div class="row clearfix"><div class="col-xs-12 col-sm-4 col-md-3 no-print">
         <span class="profile-img" style="background-image: url(./profile.jpg)"></span>
@@ -68,7 +68,7 @@
       </br>
       <p>
           현재는 업무 이후 평일과 주말을 활용해서 <mark>머신러닝에 필요한 기초 수학</mark>을 공부하고 있으며, </br>
-          Fastapi 프레임워크에 대한 공부도 진행하고 있습니다.
+          데브옵스 또는 MLOps를 목표로 인프라와 네트워크 등 공부를 하고 있습니다.
       </p>
       </br>
     </div>
@@ -144,7 +144,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-            <p class="quote">이커머스 APP 서비스 API</p>
+            <p class="quote">시스템 기능 개발</p>
             <ul>
                 <li>celery를 활용하여 Background task 및 Scheduler 관리</li></br>
                 <li>포인트 기능 자체 구축</li></br>
@@ -171,7 +171,7 @@
         <p>2023.03 ~ 2023.06</p>
         </div>
         <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-            <p class="quote">API 개발</p>
+            <p class="quote">시스템 기능 개발</p>
             <ul>
                 <li>특정 활동을 통한 경험치 획득 및 레벨업등 게임적 요소 기능</li></br>
                 <li>TDD 도입</li></br>
@@ -180,7 +180,7 @@
             </br>
         </div>
     </div>
-        <div class="row clearfix layout layout-left">
+    <div class="row clearfix layout layout-left">
 
         <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
             <h4>똑똑한 개발자</h4>
@@ -191,10 +191,41 @@
         </div>
 
         <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
-            <p class="quote">API 개발</p>
+            <p class="quote">시스템 기능 개발</p>
             <ul>
                 <li>DALL-E 모델 API를 활용한 이미지 생성</li></br>
                 <li>이미지 생성에 필요한 토큰 결제</li></br>
+            </ul>
+            </br>
+            </br>
+        </div>
+    </div>
+
+    <div class="row clearfix layout layout-left">
+
+        <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>똑똑한 개발자</h4>
+            <a href="https://www.toktokhan.dev/" target="_blank" class="link">https://www.toktokhan.dev/</a>
+            <p><b>Computer Vision을 활용한 구글 애즈 대규모 광고 분석 웹 서비스</b></p>
+            <p><b>Pyler</b></p>
+            <p>2023.04 ~ 2023.06</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <p class="quote">시스템 기능 개발</p>
+            <ul>
+                <li>구글 Ads 계정 연동</li></br>
+                <li>구글 Ads 데이터 동기화</li></br>
+                <li>외부 딥러닝 모델에 대용량 데이터 분석 요청</li></br>
+                <li>분석이 끝난 대용량 데이터 저장 ( SQS + Lambda )</li></br>
+                <li>광고 노출 및 제외 어드민 자동화</li></br>
+            </ul>
+            </br>
+            </br>
+            <p class="quote">인프라 구성</p>
+            <ul>
+                <li>RDS 보안 향상 ( deny public access )</li></br>
+                <li>Lambda 레이어를 활용하여 pycopg2 preinstall</li></br>
             </ul>
             </br>
             </br>
@@ -248,10 +279,23 @@
     </div>
     <div class="col-xs-12 col-print-12">
       <ul>
-        <li><mark>What?</mark>커머스 포인트 차감, order & refund process, payment process 등</li>
+        <li><mark>What?</mark> 커머스 포인트 차감, order & refund process, payment process 등</li>
         클라이언트가 응답을 받기 까지 서버의 특정 작업을 기다려야 했던 문제</li>
         <li><mark>How ?</mark> Celery + Redis ( Message Que ) 조합으로 Async Background task로 분리</li>
         <li><mark>Result</mark> 환불 정책으로 인한 금액 비용 계산 feature 기준 45% 성능 향상</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row clearfix layout layout-top-middle">
+    <div class="col-xs-12 col-print-12 details">
+      <h4>대용량 데이터 쿼리 Read, Write 성능 향상</h4>
+    </div>
+    <div class="col-xs-12 col-print-12">
+      <ul>
+        <li><mark>What?</mark> 천만건 이상의 데이터를 외부 API에 전송하고 내부에 저장</li>
+        <li><mark>How ?</mark> 모든 데이터를 쿼리로 한 번에 조회하고 메모리단에서 데이터를 필터링하도록 변경</li>
+        <li><mark>Result</mark> 데이터 Read 후 외부로 전송하는데 소요되는 시간 약 53% 상승</li>
       </ul>
     </div>
   </div>
@@ -271,8 +315,15 @@
         <h4>django 초기 세팅 init</h4>
       </a>
     </div>
+</div>
 
-    
+  <div class="row clearfix layout layout-top-middle">
+    <div class="col-xs-12 col-print-12 details">
+      <a href="https://github.com/GisangLee/tf-init" target="_blank" class="link">
+        <h4>Github</h4>
+        <h4>테라폼 IaC 인프라 빌드 세팅</h4>
+      </a>
+    </div>
 </div>
 
 </br>
@@ -299,19 +350,40 @@
     </div>
     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
       <ul>
-        <li>Postgresql, MariaDB, Mysql</li>
+        <li>Postgresql, MariaDB, Mysql, Aurora Postgresql</li>
       </ul>
     </div>
   </div>
   <div class="row clearfix layout layout-left">
     <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4>Server</h4>
+      <h4>Infra</h4>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
       <ul>
-        <li>AWS EC2, Nginx, Ubuntu</li>
-        <li>AWS Nat Gateway, ALB, ASG</li>
-        <li>AWS SES, AWS Lambda, AWS CloudWatch, AWS SNS, AWS ECR, AWS ECS, Github action</li>
+        <li>EC2, Fargate, Lambda</li>
+        <li>Nat Gateway, Load Balancer, Auto Scaling Group, NACL, Security Group</li>
+        <li>ECS, ECR, S3</li>
+        <li>AWS CloudWatch, SES, SNS </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row clearfix layout layout-left">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4>IaC</h4>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      <ul>
+        <li>CloudFormation</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row clearfix layout layout-left">
+    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+      <h4>CICD</h4>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+      <ul>
+        <li>Github action</li>
       </ul>
     </div>
   </div>
@@ -321,8 +393,8 @@
     </div>
         <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
             <ul>
-                <li>Celery for background tasks</li>
-                <li>Redis as Message Broker</li>
+                <li>Celery for async background tasks</li>
+                <li>SQS as Message Broker</li>
                 <li>Celery Beat as Scheduler</li>
             </ul>
         </div>
@@ -348,7 +420,6 @@
       <ul>
         <li>Github</li>
         <li>Slack</li>
-        <li>Jira</li>
         <li>Notion</li>
       </ul>
     </div>
